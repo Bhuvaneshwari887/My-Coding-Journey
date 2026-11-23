@@ -1,2 +1,2 @@
-# My-Coding-Journey
-My first coding project
+# Beyond The code
+Learning new technologies and creating innovative projects.
