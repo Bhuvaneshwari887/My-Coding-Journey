@@ -1,0 +1,329 @@
+
+/* =====================================
+   PERSONAL EXPENSE TRACKER
+   HORIZONTAL DASHBOARD LAYOUT
+===================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f6fb;
+    color: #252a40;
+}
+
+.app-layout {
+    display: grid;
+    grid-template-columns: 220px minmax(0, 1fr);
+    gap: 22px;
+    width: 100%;
+    max-width: 1600px;
+    min-height: 100vh;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* LEFT SIDEBAR */
+
+.sidebar {
+    position: sticky;
+    top: 20px;
+    height: calc(100vh - 40px);
+    overflow-y: auto;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 4px 18px rgba(30, 40, 80, 0.08);
+}
+
+/* RIGHT MAIN AREA */
+
+.main-content {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* PAGE TITLE */
+
+.main-content h1 {
+    margin: 0 0 8px;
+    font-size: 28px;
+}
+
+.main-content h2 {
+    margin-top: 0;
+    font-size: 19px;
+}
+
+/* SUMMARY CARDS */
+
+.summary {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+    width: 100%;
+}
+
+.summary > * {
+    min-width: 0;
+    padding: 18px;
+    background: #ffffff;
+    border-radius: 14px;
+    box-shadow: 0 4px 14px rgba(30, 40, 80, 0.06);
+}
+
+/* HORIZONTAL FORM AND CHART */
+
+.content-grid {
+    display: grid;
+    grid-template-columns: minmax(260px, 0.9fr) minmax(0, 1.1fr);
+    gap: 20px;
+    align-items: start;
+    width: 100%;
+}
+
+/* WHITE PANELS */
+
+.add-panel,
+.chart-panel,
+.history-panel {
+    min-width: 0;
+    width: 100%;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 4px 18px rgba(30, 40, 80, 0.06);
+}
+
+/* ADD TRANSACTION FORM */
+
+.add-panel form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.add-panel label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.add-panel input,
+.add-panel select,
+.add-panel textarea {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    padding: 11px 12px;
+    border: 1px solid #d8deeb;
+    border-radius: 8px;
+    background: #ffffff;
+    font-size: 14px;
+    outline: none;
+}
+
+.add-panel input:focus,
+.add-panel select:focus,
+.add-panel textarea:focus {
+    border-color: #7c5cff;
+    box-shadow: 0 0 0 3px rgba(124, 92, 255, 0.12);
+}
+
+.add-panel button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 9px;
+    background: #6c4cff;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.add-panel button:hover {
+    background: #5436df;
+}
+
+/* SMALLER BAR CHART */
+
+.chart-container {
+    position: relative;
+    width: 100%;
+    max-width: 380px;
+    height: 230px;
+    margin: 10px auto 0;
+}
+
+#expenseChart {
+    display: block;
+    width: 100% !important;
+    height: 100% !important;
+}
+
+/* FILTER SECTION */
+
+.filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.filters input,
+.filters select,
+.filters button {
+    max-width: 100%;
+    padding: 10px;
+    border: 1px solid #d8deeb;
+    border-radius: 8px;
+}
+
+/* TRANSACTION HISTORY */
+
+.history-panel {
+    margin-top: 0;
+    overflow-x: auto;
+}
+
+.history-panel table {
+    width: 100%;
+    border-collapse: collapse;
+    white-space: nowrap;
+}
+
+.history-panel th,
+.history-panel td {
+    padding: 12px;
+    border-bottom: 1px solid #edf0f6;
+    text-align: left;
+}
+
+.history-panel th {
+    background: #f7f8fc;
+    font-size: 13px;
+}
+
+.history-panel tr:hover {
+    background: #fafaff;
+}
+
+/* INCOME AND EXPENSE TEXT */
+
+.income {
+    color: #159957;
+    font-weight: 600;
+}
+
+.expense {
+    color: #e34d59;
+    font-weight: 600;
+}
+
+/* DELETE BUTTON */
+
+.delete-btn {
+    padding: 7px 12px;
+    border: none;
+    border-radius: 7px;
+    background: #ffe8eb;
+    color: #c62840;
+    cursor: pointer;
+}
+
+.delete-btn:hover {
+    background: #ffd2d9;
+}
+
+/* TABLET AND SMALL LAPTOP */
+
+@media (max-width: 1050px) {
+    .app-layout {
+        grid-template-columns: 180px minmax(0, 1fr);
+        gap: 14px;
+        padding: 14px;
+    }
+
+    .sidebar {
+        padding: 14px;
+    }
+
+    .content-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .chart-container {
+        max-width: 360px;
+        height: 220px;
+    }
+
+    .summary {
+        gap: 10px;
+    }
+
+    .summary > * {
+        padding: 12px;
+    }
+}
+
+/* MOBILE */
+
+@media (max-width: 650px) {
+    .app-layout {
+        grid-template-columns: minmax(0, 1fr);
+        padding: 10px;
+        gap: 14px;
+    }
+
+    .sidebar {
+        position: static;
+        width: 100%;
+        height: auto;
+    }
+
+    .main-content {
+        gap: 14px;
+    }
+
+    .main-content h1 {
+        font-size: 23px;
+    }
+
+    .summary {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .content-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .add-panel,
+    .chart-panel,
+    .history-panel {
+        padding: 14px;
+    }
+
+    .chart-container {
+        max-width: 100%;
+        height: 210px;
+    }
+
+    .filters {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .filters input,
+    .filters select,
+    .filters button {
+        width: 100%;
+    }
+}
